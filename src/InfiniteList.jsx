@@ -6,11 +6,13 @@ const InfiniteList = ({
   limit,
   containerClasses,
   containerStyle,
+  fetchThreshold,
   children
 }) => {
   const [offset, setOffset] = useState(0);
   const viewRef = useRef(null);
   const refs = new Map();
+  const fetchTh = fetchThreshold ? fetchThreshold : 5;
 
   const defaultStyle = {
     width: "200px",
@@ -42,7 +44,7 @@ const InfiniteList = ({
         ref={viewRef}
         onScroll={() => {
           for (
-            let i = refs.size - 5 < 0 ? 0 : refs.size - 5;
+            let i = refs.size - fetchTh < 0 ? 0 : refs.size - fetchTh;
             i < refs.size;
             i++
           ) {
