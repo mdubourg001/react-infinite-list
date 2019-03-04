@@ -1,6 +1,6 @@
 {
   "name": "@damnhotuser/react-infinite-list",
-  "version": "0.1.2",
+  "version": "0.1.6",
   "private": false,
   "dependencies": {
     "react": "^16.8.3",
@@ -9,9 +9,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "webpack"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -24,6 +22,13 @@
   ],
   "devDependencies": {
     "eslint-plugin-react": "^7.12.4",
-    "eslint-plugin-react-hooks": "^1.2.0"
+    "eslint-plugin-react-hooks": "^1.2.0",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^3.2.1"
   }
 }
