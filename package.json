@@ -1,6 +1,6 @@
 {
   "name": "@damnhotuser/react-infinite-list",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "dependencies": {
     "react": "^16.8.3",
