@@ -11,7 +11,7 @@ const InfiniteList = ({
 }) => {
   const [offset, setOffset] = useState(0);
   const viewRef = useRef(null);
-  const refs = new Map();
+  const [refs, setRefs] = useState(new Map());
   const fetchTh = fetchThreshold ? fetchThreshold : 5;
 
   const defaultStyle = {
@@ -39,30 +39,28 @@ const InfiniteList = ({
   }, [rows]);
 
   return (
-    <div>
-      <div
-        ref={viewRef}
-        onScroll={() => {
-          for (
-            let i = refs.size - fetchTh < 0 ? 0 : refs.size - fetchTh;
-            i < refs.size;
-            i++
-          ) {
-            if (isScrolledIntoView(refs.get(i), viewRef.current)) {
-              fetchData(offset, limit);
-              break;
-            }
+    <div
+      ref={viewRef}
+      onScroll={() => {
+        for (
+          let i = refs.size - fetchTh < 0 ? 0 : refs.size - fetchTh;
+          i < refs.size;
+          i++
+        ) {
+          if (isScrolledIntoView(refs.get(i), viewRef.current)) {
+            fetchData(offset, limit);
+            break;
           }
-        }}
-        className={containerClasses}
-        style={containerStyle ? containerStyle : defaultStyle}
-      >
-        {rows.map((row, index) => (
-          <div key={index} ref={c => refs.set(index, c)}>
-            {children(row)}
-          </div>
-        ))}
-      </div>
+        }
+      }}
+      className={containerClasses}
+      style={containerStyle ? containerStyle : defaultStyle}
+    >
+      {rows.map((row, index) => (
+        <div key={index} ref={c => setRefs(refs.set(index, c))}>
+          {children(row)}
+        </div>
+      ))}
     </div>
   );
 };
