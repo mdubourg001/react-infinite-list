@@ -2,6 +2,7 @@
 A handy React component to render infinite, onScroll fetched, data lists.
 
 ![GitHub](https://img.shields.io/github/license/mdubourg001/react-infinite-list.svg)
+![npm](https://img.shields.io/npm/v/@damnhotuser/react-infinite-list.svg)
 
 ___
 
