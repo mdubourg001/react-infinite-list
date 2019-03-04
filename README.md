@@ -1,6 +1,8 @@
 # react-infinite-list
 A handy React component to render infinite, onScroll fetched, data lists.
 
+https://img.shields.io/github/license/:user/:repo.svg
+
 ___
 
 ### Install
