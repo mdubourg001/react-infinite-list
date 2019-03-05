@@ -10,7 +10,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rollup -c -o dist/index.js"
+    "build": "react-scripts build",
+    "dist": "rollup -c -o dist/index.js"
   },
   "eslintConfig": {
     "extends": "react-app"
