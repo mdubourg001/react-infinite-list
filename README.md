@@ -21,7 +21,7 @@ ___
 ```jsx
 import React, { useState } from "react";
 
-import InfiniteList from 'react-infinite-list';
+import InfiniteList from '@damnhotuser/react-infinite-list';
 import mock_fetch from "./mock_data"; // mocking an API service
 
 const App = props => {
