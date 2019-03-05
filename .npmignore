@@ -1,4 +1,7 @@
 src
+public
+build
 .babelrc
-webpack.config.js
+rollup.config.js
 .eslintrc.json
+yarn.lock
