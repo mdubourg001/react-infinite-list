@@ -34,7 +34,7 @@ const InfiniteList = ({
   };
 
   useEffect(() => {
-    if (rows.length === 0) fetchData(offset, limit);
+    if (rows.length === 0) fetchData(offset);
     setOffset(rows.length);
   }, [rows]);
 

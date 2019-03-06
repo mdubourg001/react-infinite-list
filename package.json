@@ -1,6 +1,6 @@
 {
   "name": "@damnhotuser/react-infinite-list",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "dist/index.js",
   "private": false,
   "dependencies": {
@@ -11,7 +11,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "dist": "rollup -c -o dist/index.js"
+    "dist": "rollup -c -o dist/index.js",
+    "test": "jest"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,6 +31,8 @@
     "eslint-plugin-react-hooks": "^1.2.0",
     "rollup": "^1.4.1",
     "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-terser": "^4.0.4"
+    "rollup-plugin-terser": "^4.0.4",
+    "react-test-renderer": "16.8.3",
+    "react-testing-library": "6.0.0"
   }
 }
