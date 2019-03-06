@@ -6,16 +6,18 @@ const App = () => {
   const [rows, setRows] = useState([]);
   const limit = 10;
 
-  const fetchData = (offset) =>
+  const fetchData = offset =>
     mock_fetch(offset, limit).then(data => {
       setRows([...rows, ...data]);
     });
 
   return (
     <InfiniteList rows={rows} fetchData={fetchData} limit={limit}>
-      {row => <div>
-        {row.name}
-      </div>}
+      {(row, index, ref) => (
+        <div key={index} ref={ref}>
+          {row.name}
+        </div>
+      )}
     </InfiniteList>
   );
 };

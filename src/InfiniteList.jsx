@@ -40,6 +40,7 @@ const InfiniteList = ({
 
   return (
     <div
+      id="infinite-list-wrapper"
       ref={viewRef}
       onScroll={() => {
         for (
@@ -56,11 +57,9 @@ const InfiniteList = ({
       className={containerClasses}
       style={containerStyle ? containerStyle : defaultStyle}
     >
-      {rows.map((row, index) => (
-        <div key={index} ref={c => setRefs(refs.set(index, c))}>
-          {children(row)}
-        </div>
-      ))}
+      {rows.map((row, index) =>
+        children(row, index, c => setRefs(refs.set(index, c)))
+      )}
     </div>
   );
 };

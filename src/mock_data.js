@@ -1,7 +1,7 @@
 const MOCK_DATA = (offset, limit) => {
   const data = [];
   for (let i = 0; i < limit; i++) {
-    data.push(`Offset is ${offset}, limit is ${limit}`);
+    data.push({ name: `Offset is ${offset + i}, limit is ${limit}` });
   }
   return data;
 };
